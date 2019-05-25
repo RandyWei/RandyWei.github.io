@@ -6,7 +6,7 @@ gems:
 # Site settings
 title: "Randy Wei"
 description: > # this means to ignore newlines until "email:"
-   Randy Wei's Blog
+   print("hello world!");
 
 email: smile561607154@163.com
 #blog logo
@@ -16,8 +16,8 @@ float_logo: true # true, false (default)
 # blog cover
 cover: "/assets/images/background_image.jpg"
 
-name: 'Dirk Fabisch'
-author: 'Dirk Fabisch'
+name: 'Randy Wei'
+author: 'Randy Wei'
 author_image: "/assets/images/author.jpg"
 
 paginate:	5
@@ -34,12 +34,12 @@ twitter_handle: ''
 
 # social icons and sharing options
 social:
-  - icon:	twitter
-    url:	https://twitter.com/dirkfabisch
-    desc: Follow me on twitter
-    share_url: http://twitter.com/share
-    share_title: ?text=
-    share_link: "&amp;url="
+  # - icon:	twitter
+  #   url:	https://twitter.com/dirkfabisch
+  #   desc: Follow me on twitter
+  #   share_url: http://twitter.com/share
+  #   share_title: ?text=
+  #   share_link: "&amp;url="
 
 #  - icon:	facebook
 #    url:	https://facebook.com/???
