@@ -11,40 +11,6 @@ image:
 
 然后尝试着写下第一篇blog，下面尝试各种语法高亮支持
 
-{% highlight dart %}
-import 'package:flutter/material.dart';
-
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
-  factory MyHomePage.forDesignTime() {
-    // TODO: add arguments
-    return new MyHomePage();
-  }
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-{% endhighlight %}
-
 {% highlight ruby %}
 def print_hi(name)
   puts "Hi, #{name}"
