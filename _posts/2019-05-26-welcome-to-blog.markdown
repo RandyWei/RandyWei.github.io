@@ -7,11 +7,11 @@ tags: featured
 image:
 ---
 好早之前想弄过博客，用过wordpress，也想过自己写，可是基本上都是到一半感觉耗费太多精力，然后就放弃了，真是应了从入门到放弃。
-周末在家无聊，研究了一下Github Pages功能，搜索到了可以和jekyll配合，然后尝试了一下感觉还可以，只是目前使用的这个![dirkfabisch/mediator](https://github.com/dirkfabisch/mediator)模版加载得好像有点慢。
+周末在家无聊，研究了一下Github Pages功能，搜索到了可以和jekyll配合，然后尝试了一下感觉还可以，只是目前使用的这个[dirkfabisch/mediator](https://github.com/dirkfabisch/mediator)模版加载得好像有点慢。
 
 然后尝试着写下第一篇blog，下面尝试各种语法高亮支持
 
-```dart
+{% highlight dart %}
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -43,7 +43,7 @@ class MyHomePage extends StatefulWidget {
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
-```
+{% endhighlight %}
 
 {% highlight ruby %}
 def print_hi(name)
