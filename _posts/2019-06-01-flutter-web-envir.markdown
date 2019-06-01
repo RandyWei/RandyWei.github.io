@@ -26,7 +26,7 @@ Doctor summary (to see all details, run flutter doctor -v):
 [✓] Connected device (1 available)
 • No issues found!
 ```
-## 搭建步骤：
+## 搭建步骤
 
 ### 1、从github上面把flutter_web项目克隆到本地
 git clone https://github.com/flutter/flutter_web.git
