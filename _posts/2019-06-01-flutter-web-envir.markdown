@@ -28,11 +28,11 @@ Doctor summary (to see all details, run flutter doctor -v):
 ```
 ## 搭建步骤：
 
-###1、从github上面把flutter_web项目克隆到本地
+### 1、从github上面把flutter_web项目克隆到本地
 git clone https://github.com/flutter/flutter_web.git
 存放目录随意，不过建议存放目录跟flutter sdk同级，日后更新维护好找
 
-###2、安装flutter_web的编译工具webdev
+### 2、安装flutter_web的编译工具webdev
 ```
 flutter pub global activate webdev
 ```
@@ -62,9 +62,9 @@ flutter pub global run webdev
 
 到此环境搭建成功了。
 
-###3、创建和启动项目
+### 3、创建和启动项目
 
-3.1使用现有项目
+#### 3.1使用现有项目
 flutter_web目录下有examples几个demo项目，比如：hello_world
 ```
 cd <flutter_web目录>/examples/hello_world
@@ -102,7 +102,7 @@ RandyWeideMacBook-Pro:hello_world wei$ flutter pub global run webdev serve
 ```
 然后就可以在浏览器使用信息中的地址 http://localhost:8080 访问到了。
 
-3.2 创建新项目
+#### 3.2 创建新项目
 官方给两种途径创建新项目
 1）使用Visual Studio Code，具体配置Flutter Dart插件就不多说。使用命令面板Flutter: New Web Project，就可以创建一个新项目了，等配置完成后，按F5或者Debug -> Start Debugging，就可以启动服务并自动打开浏览器。
 
@@ -119,7 +119,7 @@ RandyWeideMacBook-Pro:hello_world wei$ flutter pub global run webdev serve
 flutter pub global activate stagehand
 ```
 跟安装webdev一样
-安装成功后可以执行命令
+安装成功后可以执行下面命令查看帮助
 
 ```
 flutter pub global run stagehand
