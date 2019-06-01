@@ -33,9 +33,14 @@ git clone https://github.com/flutter/flutter_web.git
 存放目录随意，不过建议存放目录跟flutter sdk同级，日后更新维护好找
 
 ### 2、安装flutter_web的编译工具webdev
+
 ```
+//环境变量只配置了flutter sdk而没有配置dart sdk
 flutter pub global activate webdev
+//环境变量已经配置了dart sdk
+pub global activate webdev
 ```
+
 安装过程可能出现如下信息，此为网友在windows上配置时出现的
 ```
 Resolving dependencies…
@@ -53,11 +58,14 @@ Precompiled webdev:webdev.
 Installed executable webdev.
 Activated webdev 2.0.6
 ```
-上述信息中可能有一个Warning提示需要配置环境变量，按提示配置环境变量即可
+上述信息中可能有一个Warning提示需要配置环境变量，按提示将$HOME/.pub-cache/bin配置到环境变量即可
 
 可以尝试执行命令
 ```
+//环境变量只配置了flutter sdk而没有配置dart sdk
 flutter pub global run webdev
+//环境变量已经配置了dart sdk
+ pub global run webdev
 ```
 
 到此环境搭建成功了。
@@ -71,9 +79,9 @@ cd <flutter_web目录>/examples/hello_world
 ```
 执行
 ```
-flutter pub upgrade
+flutter pub upgrade 或 pub upgrade
 或
-flutter pub get
+flutter pub get 或 pub get
 ```
 如果出现
 ```
@@ -82,11 +90,12 @@ RandyWeideMacBook-Pro:hello_world wei$ flutter pub get
 ! flutter_web_ui 0.0.0 from path ../../packages/flutter_web_ui          
 Running "flutter packages get" in hello_world...                   21.9s
 ```
-说明项目配置成功了，然后就是启动本地服务，官方的命令是：```webdev serve```
-实际使用过程中这个命令并不对
-需要使用
+说明项目配置成功了，然后就是启动本地服务
 ```
+//环境变量只配置了flutter sdk而没有配置dart sdk
 flutter pub global run webdev serve
+//环境变量已经配置了dart sdk
+webdev serve
 ```
 
 出现以下信息就是成功了
@@ -116,7 +125,10 @@ RandyWeideMacBook-Pro:hello_world wei$ flutter pub global run webdev serve
 
 命令行创建web项目需要安装另一个工具
 ```
+//环境变量只配置了flutter sdk而没有配置dart sdk
 flutter pub global activate stagehand
+//环境变量已经配置了dart sdk
+pub global activate stagehand
 ```
 跟安装webdev一样
 安装成功后可以执行下面命令查看帮助
@@ -150,7 +162,10 @@ cd 目录
 ```
 执行命令
 ```
+//环境变量只配置了flutter sdk而没有配置dart sdk
 flutter pub global run stagehand flutter-web-preview
+//环境变量已经配置了dart sdk
+stagehand flutter-web-preview
 ```
 
 一个web项目就创建完成了，可以使用studio打开项目，使用```flutter pub get```配置好完之后，可以进行正常的代码了。
