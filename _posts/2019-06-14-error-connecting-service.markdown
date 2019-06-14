@@ -14,14 +14,19 @@ Error connecting to the service protocol: HttpException: Connection closed befor
 ```
 
 这个问题目前发现在安卓模拟器上出现频率较多，之前为了简单方便，都建议使用真机测试。
+
 今天有时间寻找研究一下这个问题，多谢网友【itskamui】(网名)的协作一起研究。
 
 情况1：
 ​![](https://www.bughub.dev/assets/article_images/2019-06-14-error-connecting-service/0.png) ​
 可以看到日志里面有```No connected devices```，判断应该是模拟器没有链接成功，可以尝试各种
+
 ```adb devices -l```
+
 或者
+
 ```flutter devices```
+
 查看是不是能看到模拟器，如果看不到，重启模拟器，再试。
 
 情况2：
@@ -67,13 +72,18 @@ cmp=pt.tribeiro.flutter_pdf_viewer_example/pt.tribeiro.flutter_plugin_pdf_viewer
 
 ```
 
-Dart Observatory (语句级的单步调试和分析器) 是调试工具也要靠这个工具启动的服务来实现flutter热加载，有兴趣的可以查看文档[[https://dart-lang.github.io/observatory/](https://dart-lang.github.io/observatory/)]([https://dart-lang.github.io/observatory/](https://dart-lang.github.io/observatory/))研究一下
+Dart Observatory (语句级的单步调试和分析器) 是调试工具也要靠这个工具启动的服务来实现flutter热加载，有兴趣的可以查看文档[https://dart-lang.github.io/observatory/](https://dart-lang.github.io/observatory/)研究一下
 
 所以一开始以为是端口问题，使用参数```--observatory-port=```指定了端口，发现是无效的。
+
 flutter sdk 的issues 上有好多类似问题。
+
 [https://github.com/flutter/flutter/issues/6724](https://github.com/flutter/flutter/issues/6724)
+
 [https://github.com/flutter/flutter/issues/13747](https://github.com/flutter/flutter/issues/13747)
+
 有说需要用PowerShell运行的，经过尝试无效。
+
 有说需要管理员身份运行的，尝试无效。
 
 后来发现模拟器的系统镜像版本是Android 10或者是Android Q或者是Android 9.+(api 29)
@@ -86,8 +96,11 @@ flutter sdk 的issues 上有好多类似问题。
 还有不排除设置了代理的可能性。
 
 所以目前解决这个问题的办法是：
+
 1、使用低版本的系统镜像
+
 2、使用真机吧、真机吧、真机吧
+
 
 [jekyll]:      http://jekyllrb.com
 [jekyll-gh]:   https://github.com/jekyll/jekyll
