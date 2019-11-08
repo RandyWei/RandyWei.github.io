@@ -1,0 +1,97 @@
+---
+layout: post
+title:  "Flutter集成友盟推送"
+date:   2019-11-08 12:00:00
+categories: jekyll default
+tags: error
+image:
+---
+由于项目需要集成推送，因为手里有友盟的账号，所以优先选择了友盟推送。
+
+在集成过程中碰到的坑，做个记录
+
+
+
+### 1、安卓的初始化一定要在 Application 里面
+
+
+### 2、日志显示消息已推送到手机，可是不在通知栏显示。 
+日志中报错信息1如图  
+![](https://www.bughub.dev/assets/article_images/2019-11-08/nodisplaynotify.png)
+问题并不是官方说的两个解决方案，因这个问题纠结了一天。后来发现另一段日志，因为没有标红所以一直忽略了
+
+```
+
+W/System.err: java.lang.IllegalArgumentException: ResClass 未初始化，请确保你已经添加了必要的资源。同时确保你在混淆文件中添加了 com.chinahrt.app.gpjw.R$* 。 field=umeng_push_notification_default_small_icon
+W/System.err:     at com.umeng.message.common.c.a(Res.java:223)
+W/System.err:     at com.umeng.message.common.c.d(Res.java:152)
+W/System.err:     at com.umeng.message.UmengMessageHandler.getSmallIconId(UmengMessageHandler.java:464)
+W/System.err:     at com.umeng.message.UmengMessageHandler.a(UmengMessageHandler.java:436)
+W/System.err:     at com.umeng.message.UmengMessageHandler.dealWithNotificationMessage(UmengMessageHandler.java:161)
+W/System.err:     at com.umeng.message.UmengMessageHandler.handleMessage(UmengMessageHandler.java:71)
+W/System.err:     at com.umeng.message.UmengMessageCallbackHandlerService.a(UmengMessageCallbackHandlerService.java:160)
+W/System.err:     at com.umeng.message.service.JobIntentService$a.a(JobIntentService.java:235)
+W/System.err: at com.umeng.message.service.JobIntentService$a.doInBackground(JobIntentService.java:227)
+W/System.err:     at android.os.AsyncTask$2.call(AsyncTask.java:334)
+W/System.err: at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+W/System.err: at java.util.concurrent.ThreadPoolExecutor.processTask(ThreadPoolExecutor.java:1187)
+W/System.err: at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1152)
+W/System.err: at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+W/System.err:     at java.lang.Thread.run(Thread.java:784)
+W/System.err: java.lang.IllegalArgumentException: ResClass未初始化，请确保你已经添加了必要的资源。同时确保你在混淆文件中添加了com.chinahrt.app.gpjw.R$\* 。 field=umeng_push_notification_default_large_icon
+W/System.err: at com.umeng.message.common.c.a(Res.java:223)
+W/System.err: at com.umeng.message.common.c.d(Res.java:152)
+W/System.err: at com.umeng.message.UmengMessageHandler.getLargeIcon(UmengMessageHandler.java:502)
+W/System.err: at com.umeng.message.UmengMessageHandler.a(UmengMessageHandler.java:437)
+W/System.err: at com.umeng.message.UmengMessageHandler.dealWithNotificationMessage(UmengMessageHandler.java:161)
+W/System.err: at com.umeng.message.UmengMessageHandler.handleMessage(UmengMessageHandler.java:71)
+W/System.err: at com.umeng.message.UmengMessageCallbackHandlerService.a(UmengMessageCallbackHandlerService.java:160)
+W/System.err: at com.umeng.message.service.JobIntentService$a.a(JobIntentService.java:235)
+W/System.err:     at com.umeng.message.service.JobIntentService$a.doInBackground(JobIntentService.java:227)
+W/System.err: at android.os.AsyncTask$2.call(AsyncTask.java:334)
+W/System.err:     at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+W/System.err:     at java.util.concurrent.ThreadPoolExecutor.processTask(ThreadPoolExecutor.java:1187)
+W/System.err:     at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1152)
+W/System.err:     at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+W/System.err: at java.lang.Thread.run(Thread.java:784)
+I/System.out: true
+
+```
+
+报错的意思是ResClass没有初始化，其实错误是找不到资源文件。通知栏显示通知需要一个图标，而友盟找不到这个图标报错了，所以就没有显示出来。  
+我项目中出现这个问题的原因是因为我创建项目的时候包名填写错误，我手动改了build.gradle中的applicationId，而AndroidManifest.xml中是另一个包名  
+
+解决方案有两个：  
+1、把包名统一了  
+2、使用官方提供的方法  
+
+```pushAgent.resourcePackageName = "com.chinahrt.app.flutter_push_demo"```  
+
+安卓的坑大致就这样  
+
+在集成iOS部分的时候，添加官方sdk报了一个错，当时忘了留下日志，需要在Podfile里面添加
+```
+pre_install do |installer|
+  # workaround for https://github.com/CocoaPods/CocoaPods/issues/3289
+  Pod::Installer::Xcode::TargetValidator.send(:define_method, :verify_no_static_framework_transitive_dependencies) {}
+end
+```
+
+然后把封装好之后的插件使用在项目中出现
+
+```
+[!] The 'Pods-Runner' target has transitive dependencies that include statically linked binaries: (/Users/wei/Documents/AndroidStudioProjects/guo_pei_jiao_wu/guo_pei_jiao_wu/ios/Pods/UMCCommon/UMCommon.framework)
+```
+
+因为我插件是用oc写的，但我项目是swift写，所以使用三方库的时候有问题。需要在Podfile把#use_frameworks!注释掉
+
+下面就是我封装好的插件，common是基础插件，core是核心插件，目前只是基本功能，后续有时间把api扩展，尽量支持官方的所有功能  
+
+[https://pub.flutter-io.cn/packages/flt_umengpush_common](https://pub.flutter-io.cn/packages/flt_umengpush_common)
+
+[https://pub.flutter-io.cn/packages/flt_umengpush_core](https://pub.flutter-io.cn/packages/flt_umengpush_core)
+
+
+[jekyll]:      http://jekyllrb.com
+[jekyll-gh]:   https://github.com/jekyll/jekyll
+[jekyll-help]: https://github.com/jekyll/jekyll-help
