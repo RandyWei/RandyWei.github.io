@@ -8,12 +8,16 @@ image:
 ---
 
 
-<div style="background:url(https://lilithimage.lilithcdn.com/roc/website/m/bg0_2.png?v=1);height:11.49rem;background-position-x: center;position: relative;">
+<div style="position: relative;
+    overflow: hidden;
+    background: url(https://lilithimage.lilithcdn.com/roc/website/m/bg0_2.png?v=1) no-repeat center top;
+    background-size: contain;">
   <div style="
     position: absolute;
     bottom: 0;
     margin: 0 50%;
-    color:green;">
+    color:green;
+              ">
     
         <div style="padding:10px">
         <div>万国觉醒</div>
