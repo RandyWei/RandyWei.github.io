@@ -18,13 +18,13 @@ image:
         <div style="padding:10px">
         <div>万国觉醒</div>
   <div>版本号：1.0.30.14</div>
-  <div><a href="http://look.itest.chinahrt.com//examSystem/other/20202/16/7b6d9b946d084c87aaea895c10257497.apk" target="_blank">安卓下载</a></div>
+  <div><a href="http://look.itest.chinahrt.com//examSystem/other/20202/16/7b6d9b946d084c87aaea895c10257497.apk" target="_blank" style="color:green">安卓下载</a></div>
         </div>
 
   <div style="padding:10px;">
 <div>Discord</div>
   <div>版本号：10.3.2</div>
-  <div><a href="http://look.itest.chinahrt.com//examSystem/other/20202/16/110063e69bae4135ab5b15e1ab4ca0bb.apk" target="_blank">安卓下载</a></div>
+  <div><a href="http://look.itest.chinahrt.com//examSystem/other/20202/16/110063e69bae4135ab5b15e1ab4ca0bb.apk" target="_blank" style="color:green">安卓下载</a></div>
 </div>
     </div>
 </div>
