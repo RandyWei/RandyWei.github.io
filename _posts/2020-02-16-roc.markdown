@@ -8,7 +8,7 @@ image:
 ---
 
 
-<div style="background:url(https://lilithimage.lilithcdn.com/roc/website/pc/bg0_5.png?v=1);height:1120px;background-position-x: center;position: relative;">
+<div style="background:url(https://lilithimage.lilithcdn.com/roc/website/m/bg0_2.png?v=1);height:1120px;background-position-x: center;position: relative;">
   <div style="
     position: absolute;
     bottom: 0;
