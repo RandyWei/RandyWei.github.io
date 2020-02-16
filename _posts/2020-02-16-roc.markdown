@@ -1,0 +1,24 @@
+---
+layout: post
+title: "萬國覺醒相關資源下載"
+date: 2020-02-16 10:00:00
+categories: jekyll default
+tags: featured
+image:
+---
+
+https://lilithimage.lilithcdn.com/roc/website/pc/bg0_5.png?v=1
+
+<div style="background:url(https://lilithimage.lilithcdn.com/roc/website/pc/bg0_5.png?v=1);height:300px">
+  <div>万国觉醒</div>
+  <div>版本号：1.0.30.14</div>
+  <div><a href="http://look.itest.chinahrt.com//examSystem/other/20202/16/7b6d9b946d084c87aaea895c10257497.apk" target="_blank">安卓下载</a></div>
+
+  <div>Discord</div>
+  <div>版本号：10.3.2</div>
+  <div><a href="http://look.itest.chinahrt.com//examSystem/other/20202/16/110063e69bae4135ab5b15e1ab4ca0bb.apk" target="_blank">安卓下载</a></div>
+</div>
+
+[jekyll]: http://jekyllrb.com
+[jekyll-gh]: https://github.com/jekyll/jekyll
+[jekyll-help]: https://github.com/jekyll/jekyll-help
