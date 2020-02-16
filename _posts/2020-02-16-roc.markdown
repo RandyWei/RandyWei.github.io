@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: "萬國覺醒相關資源下載"
 date: 2020-02-16 10:00:00
 categories: jekyll default
