@@ -9,14 +9,26 @@ image:
 
 https://lilithimage.lilithcdn.com/roc/website/pc/bg0_5.png?v=1
 
-<div style="background:url(https://lilithimage.lilithcdn.com/roc/website/pc/bg0_5.png?v=1);height:300px">
-  <div>万国觉醒</div>
+<div style="background:url(https://lilithimage.lilithcdn.com/roc/website/pc/bg0_5.png?v=1);height:1120px;background-position-x: center;position: relative;">
+  <div style="
+    position: absolute;
+    bottom: 0;
+    margin: 0 50%;
+              color:green;
+">
+    
+        <div style="padding:10px">
+        <div>万国觉醒</div>
   <div>版本号：1.0.30.14</div>
   <div><a href="http://look.itest.chinahrt.com//examSystem/other/20202/16/7b6d9b946d084c87aaea895c10257497.apk" target="_blank">安卓下载</a></div>
+        </div>
 
-  <div>Discord</div>
+  <div style="padding:10px;">
+<div>Discord</div>
   <div>版本号：10.3.2</div>
   <div><a href="http://look.itest.chinahrt.com//examSystem/other/20202/16/110063e69bae4135ab5b15e1ab4ca0bb.apk" target="_blank">安卓下载</a></div>
+</div>
+    </div>
 </div>
 
 [jekyll]: http://jekyllrb.com
