@@ -7,7 +7,6 @@ tags: featured
 image:
 ---
 
-https://lilithimage.lilithcdn.com/roc/website/pc/bg0_5.png?v=1
 
 <div style="background:url(https://lilithimage.lilithcdn.com/roc/website/pc/bg0_5.png?v=1);height:1120px;background-position-x: center;position: relative;">
   <div style="
