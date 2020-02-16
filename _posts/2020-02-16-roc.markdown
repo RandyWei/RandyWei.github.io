@@ -14,8 +14,7 @@ https://lilithimage.lilithcdn.com/roc/website/pc/bg0_5.png?v=1
     position: absolute;
     bottom: 0;
     margin: 0 50%;
-              color:green;
-">
+    color:green;">
     
         <div style="padding:10px">
         <div>万国觉醒</div>
