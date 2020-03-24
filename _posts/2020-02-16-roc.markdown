@@ -18,6 +18,13 @@ image:
   <div>版本号：1.0.30.14</div>
   <div><a href="http://look.itest.chinahrt.com//examSystem/other/20202/16/7b6d9b946d084c87aaea895c10257497.apk" target="_blank" style="color:green">安卓下载</a></div>
         </div>
+        
+        <div style="padding:10px">
+        <div>万国觉醒</div>
+  <div>版本号：1.0.31.19</div>
+  <div><a href="http://look.yun.chinahrt.com/customer/appPackage/20203/24/wu_1e458q5a21tj91sa1qkie9nfl74.apk" target="_blank" style="color:green">安卓下载</a></div>
+        </div>
+        
 
   <div style="padding:10px;">
 <div>Discord</div>
